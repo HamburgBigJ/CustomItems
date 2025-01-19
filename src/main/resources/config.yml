@@ -1,0 +1,31 @@
+items:
+  example1:
+    name: "Example Item1"
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
+  example2:
+    name: "Example Item2"
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
+  example3:
+    name: "Example Item3"
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
+
+blocks:
+  example1:
+    name: "Example Block 1"
+    id: 1
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
+  example2:
+    name: "Example Block 2"
+    id: 2
+    texture: "https://i.ibb.co/xyz/example2.png"
+
+
+food:
+  example1:
+    name: "Example Food 1"
+    hunger: 5
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
+  example2:
+    name: "Example Food 2"
+    hunger: 5
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"

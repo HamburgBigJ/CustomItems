@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>ExamplePlugin</artifactId>
+    <groupId>cho.info</groupId>
+    <artifactId>CustomItems</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -27,7 +27,7 @@
             <artifactId>Bukkit</artifactId>
             <version>1.6.4</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/craftbukkit.jar</systemPath>
+            <systemPath>${basedir}/lib/craftbukkit-2918.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

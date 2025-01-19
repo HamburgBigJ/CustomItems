@@ -1,7 +1,13 @@
-name: ExamplePlugin
-main: com.example.Main
+name: CustomItems
+main: cho.info.CustomItems
 version: 1.0.0
 
 # Depend on Spout
 depend:
   - Spout
+
+commands:
+  CIcreate:
+    description: Create a custom item
+    usage: /CIcreate
+    permission: customitems.create
