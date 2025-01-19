@@ -29,9 +29,3 @@ food:
     hunger: 5
     texture: "https://i.ibb.co/9yPvH6W/spout.png"
 
-tools:
-  example1:
-    name: "Example Tool 1"
-    damage: 5
-    durability: 100
-    texture: "https://i.ibb.co/9yPvH6W/spout.png"
