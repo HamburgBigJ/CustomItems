@@ -2,7 +2,6 @@ package cho.info;
 
 import cho.info.blocks.BlockManager;
 import cho.info.blocks.RegisterBlocks;
-import cho.info.crafting.CraftingManager;
 import cho.info.food.FoodManager;
 import cho.info.food.RegisterFood;
 import cho.info.items.ItemManager;
@@ -43,6 +42,7 @@ public class CustomItems extends JavaPlugin {
         registerItems();
         registerBlocks();
         registerFood();
+        registerTools();
         //registerCraftingRecipes(itemManager); // not jet implemented
 
         itemList();
@@ -98,35 +98,26 @@ public class CustomItems extends JavaPlugin {
         });
     }
 
-    private void registerCraftingRecipes(ItemManager itemManager) {
-        CraftingManager craftingManager = new CraftingManager(this, itemManager);
-        craftingManager.loadCraftingRecipes();
-    }
 
     public void itemList() {
+        if (itemManager == null || blockManager == null || foodManager == null || toolManager == null) {
+            getLogger().severe("One or more managers are not initialized!");
+            return;
+        }
+
         List<ItemManager.Item> itemList = itemManager.getItemList();
         List<BlockManager.Block> blockList = blockManager.getBlocksList();
         List<FoodManager.Food> foodList = foodManager.getFoodList();
+        List<ToolManager.Tool> toolList = toolManager.getToolList();
 
-        int items = 0;
-        int blocks = 0;
-        int tools = 0;
-
-        for (ItemManager.Item item : itemList) {
-            items ++;
-        }
-        for (BlockManager.Block block : blockList) {
-            blocks ++;
-        }
-        for (FoodManager.Food food : foodList) {
-            items ++;
-        }
-        for (ToolManager.Tool tool : toolManager.getToolList()) {
-            tools ++;
-        }
+        int items = itemList.size();
+        int blocks = blockList.size();
+        int foodItems = foodList.size();
+        int tools = toolList.size();
 
         getLogger().info("Items: " + items);
         getLogger().info("Blocks: " + blocks);
+        getLogger().info("Food Items: " + foodItems);
         getLogger().info("Tools: " + tools);
     }
 
