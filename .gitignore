@@ -40,6 +40,6 @@ build/
 
 # Custom ignore. We do not want to distribute the full craftbukkit server jar
 
-lib/craftbukkit.jar
+# lib/craftbukkit.jar
 
 .idea
