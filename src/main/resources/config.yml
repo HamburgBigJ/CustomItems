@@ -17,7 +17,7 @@ blocks:
   example2:
     name: "Example Block 2"
     id: 2
-    texture: "https://i.ibb.co/xyz/example2.png"
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
 
 food:
   example1:

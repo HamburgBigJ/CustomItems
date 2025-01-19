@@ -45,6 +45,8 @@ public class CustomItems extends JavaPlugin {
         registerFood();
         //registerCraftingRecipes(itemManager); // not jet implemented
 
+        itemList();
+
         getLogger().info("CustomItems has been enabled!");
     }
 
