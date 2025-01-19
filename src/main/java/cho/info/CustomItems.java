@@ -6,8 +6,6 @@ import cho.info.food.FoodManager;
 import cho.info.food.RegisterFood;
 import cho.info.items.ItemManager;
 import cho.info.items.RegisterItems;
-import cho.info.tools.RegisterTools;
-import cho.info.tools.ToolManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
@@ -17,12 +15,10 @@ public class CustomItems extends JavaPlugin {
     private RegisterItems registerItems;
     private RegisterBlocks registerBlocks;
     private RegisterFood registerFood;
-    private RegisterTools registerTools;
 
     public ItemManager itemManager;
     public BlockManager blockManager;
     public FoodManager foodManager;
-    public ToolManager toolManager;
 
     private static CustomItems instance;
 
@@ -42,7 +38,7 @@ public class CustomItems extends JavaPlugin {
         registerItems();
         registerBlocks();
         registerFood();
-        registerTools();
+        // registerTools();
         //registerCraftingRecipes(itemManager); // not jet implemented
 
         itemList();
@@ -89,18 +85,10 @@ public class CustomItems extends JavaPlugin {
         });
     }
 
-    private void registerTools() {
-        this.toolManager = new ToolManager();
-        toolManager.loadToolsFromConfig();
-
-        toolManager.getToolList().forEach(tool -> {
-            registerTools.createTool(tool.getName(), tool.getTexture(),tool.getDurability());
-        });
-    }
 
 
     public void itemList() {
-        if (itemManager == null || blockManager == null || foodManager == null || toolManager == null) {
+        if (itemManager == null || blockManager == null || foodManager == null) {
             getLogger().severe("One or more managers are not initialized!");
             return;
         }
@@ -108,17 +96,14 @@ public class CustomItems extends JavaPlugin {
         List<ItemManager.Item> itemList = itemManager.getItemList();
         List<BlockManager.Block> blockList = blockManager.getBlocksList();
         List<FoodManager.Food> foodList = foodManager.getFoodList();
-        List<ToolManager.Tool> toolList = toolManager.getToolList();
 
         int items = itemList.size();
         int blocks = blockList.size();
         int foodItems = foodList.size();
-        int tools = toolList.size();
 
         getLogger().info("Items: " + items);
         getLogger().info("Blocks: " + blocks);
         getLogger().info("Food Items: " + foodItems);
-        getLogger().info("Tools: " + tools);
     }
 
 }

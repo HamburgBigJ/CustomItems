@@ -10,9 +10,7 @@ public class FoodManager {
 
     private final List<Food> foodList = new ArrayList<>();
 
-    /**
-     * Lädt Nahrungsmittel aus der Konfiguration und fügt sie der Liste hinzu.
-     */
+
     public void loadFoodFromConfig() {
         // Hole die Sektion "food" aus der Config
         ConfigurationSection foodSection = CustomItems.getInstance().getConfig().getConfigurationSection("food");
@@ -30,18 +28,12 @@ public class FoodManager {
         }
     }
 
-    /**
-     * Gibt die Liste der Nahrungsmittel zurück.
-     *
-     * @return Liste der Nahrungsmittel
-     */
+
     public List<Food> getFoodList() {
         return foodList;
     }
 
-    /**
-     * Repräsentiert ein Nahrungsmittel mit Name, Hungerwert und Textur.
-     */
+
     public static class Food {
         private final String name;
         private final int hunger;

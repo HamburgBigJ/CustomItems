@@ -10,9 +10,7 @@ public class BlockManager {
 
     private final List<Block> blocksList = new ArrayList<>();
 
-    /**
-     * Lädt Blöcke aus der Konfiguration und fügt sie der Liste hinzu.
-     */
+
     public void loadBlocksFromConfig() {
         // Hole die Sektion "blocks" aus der Config
         ConfigurationSection blocksSection = CustomItems.getInstance().getConfig().getConfigurationSection("blocks");
@@ -30,18 +28,12 @@ public class BlockManager {
         }
     }
 
-    /**
-     * Gibt die Liste der Blöcke zurück.
-     *
-     * @return Liste der Blöcke
-     */
+
     public List<Block> getBlocksList() {
         return blocksList;
     }
 
-    /**
-     * Repräsentiert einen Block mit Name, ID und Textur.
-     */
+
     public static class Block {
         private final String name;
         private final int id;

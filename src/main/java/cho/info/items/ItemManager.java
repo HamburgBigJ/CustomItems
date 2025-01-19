@@ -14,7 +14,6 @@ public class ItemManager {
     private final List<Item> itemList = new ArrayList<>();
 
     public void loadItemsFromConfig() {
-        // Hole die Sektion "items" aus der Config
         ConfigurationSection itemsSection = CustomItems.getInstance().getConfig().getConfigurationSection("items");
 
         if (itemsSection != null) {
@@ -36,10 +35,10 @@ public class ItemManager {
     public ItemStack getItemByName(String name) {
         for (Item item : itemList) {
             if (item.getName().equals(name)) {
-                return new ItemStack(Material.getMaterial(item.getTexture())); // Umwandlung von Texture in Material
+                return new ItemStack(Material.getMaterial(item.getTexture()));
             }
         }
-        return null; // Item nicht gefunden
+        return null;
     }
 
 
@@ -47,9 +46,8 @@ public class ItemManager {
         return itemList;
     }
 
-    // Wandelt Item in ein ItemStack um
     public ItemStack createItemStack(Item item) {
-        ItemStack itemStack = new ItemStack(Material.DIAMOND);  // Beispiel: Standardmäßig Diamant
+        ItemStack itemStack = new ItemStack(Material.DIAMOND);
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         // Setze Name
@@ -65,7 +63,7 @@ public class ItemManager {
 
         // Setze Verzauberung (falls vorhanden)
         if (item.getEnchantment() != null) {
-            itemMeta.addEnchant(org.bukkit.enchantments.Enchantment.DAMAGE_ALL, 1, true);  // Beispiel: Verzauberung
+            itemMeta.addEnchant(org.bukkit.enchantments.Enchantment.DAMAGE_ALL, 1, true);
         }
 
         itemStack.setItemMeta(itemMeta);
