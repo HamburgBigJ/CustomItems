@@ -19,7 +19,6 @@ blocks:
     id: 2
     texture: "https://i.ibb.co/xyz/example2.png"
 
-
 food:
   example1:
     name: "Example Food 1"
@@ -28,4 +27,11 @@ food:
   example2:
     name: "Example Food 2"
     hunger: 5
+    texture: "https://i.ibb.co/9yPvH6W/spout.png"
+
+tools:
+  example1:
+    name: "Example Tool 1"
+    damage: 5
+    durability: 100
     texture: "https://i.ibb.co/9yPvH6W/spout.png"

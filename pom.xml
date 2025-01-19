@@ -27,7 +27,7 @@
             <artifactId>Bukkit</artifactId>
             <version>1.6.4</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/craftbukkit-2918.jar</systemPath>
+            <systemPath>${basedir}/lib/craftbukkit.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
